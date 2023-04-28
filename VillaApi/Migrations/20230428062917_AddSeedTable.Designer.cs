@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VillaApi.Data;
 
@@ -11,9 +12,11 @@ using VillaApi.Data;
 namespace VillaApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230428062917_AddSeedTable")]
+    partial class AddSeedTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -70,7 +73,7 @@ namespace VillaApi.Migrations
                         {
                             Id = 1,
                             Amenity = "",
-                            CreatedDate = new DateTime(2023, 4, 28, 12, 2, 45, 103, DateTimeKind.Local).AddTicks(6216),
+                            CreatedDate = new DateTime(2023, 4, 28, 11, 59, 17, 260, DateTimeKind.Local).AddTicks(5507),
                             Details = " It has 2 Pool and 8 Rooms",
                             ImageUrl = "",
                             Name = "Royal Villa",
@@ -83,7 +86,7 @@ namespace VillaApi.Migrations
                         {
                             Id = 2,
                             Amenity = "",
-                            CreatedDate = new DateTime(2023, 4, 28, 12, 2, 45, 103, DateTimeKind.Local).AddTicks(6230),
+                            CreatedDate = new DateTime(2023, 4, 28, 11, 59, 17, 260, DateTimeKind.Local).AddTicks(5531),
                             Details = " It has 2 Pool and 9 Rooms",
                             ImageUrl = "",
                             Name = "killa Villa",
@@ -96,7 +99,7 @@ namespace VillaApi.Migrations
                         {
                             Id = 3,
                             Amenity = "",
-                            CreatedDate = new DateTime(2023, 4, 28, 12, 2, 45, 103, DateTimeKind.Local).AddTicks(6233),
+                            CreatedDate = new DateTime(2023, 4, 28, 11, 59, 17, 260, DateTimeKind.Local).AddTicks(5533),
                             Details = " It has 2 Pool and 7 Rooms",
                             ImageUrl = "",
                             Name = "Raja Villa",

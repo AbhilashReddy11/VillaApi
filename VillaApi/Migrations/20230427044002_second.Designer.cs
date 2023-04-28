@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VillaApi.Data;
 
@@ -11,9 +12,11 @@ using VillaApi.Data;
 namespace VillaApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230427044002_second")]
+    partial class second
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -70,7 +73,7 @@ namespace VillaApi.Migrations
                         {
                             Id = 1,
                             Amenity = "",
-                            CreatedDate = new DateTime(2023, 4, 28, 12, 2, 45, 103, DateTimeKind.Local).AddTicks(6216),
+                            CreatedDate = new DateTime(2023, 4, 27, 10, 10, 2, 592, DateTimeKind.Local).AddTicks(6762),
                             Details = " It has 2 Pool and 8 Rooms",
                             ImageUrl = "",
                             Name = "Royal Villa",
@@ -83,7 +86,7 @@ namespace VillaApi.Migrations
                         {
                             Id = 2,
                             Amenity = "",
-                            CreatedDate = new DateTime(2023, 4, 28, 12, 2, 45, 103, DateTimeKind.Local).AddTicks(6230),
+                            CreatedDate = new DateTime(2023, 4, 27, 10, 10, 2, 592, DateTimeKind.Local).AddTicks(6777),
                             Details = " It has 2 Pool and 9 Rooms",
                             ImageUrl = "",
                             Name = "killa Villa",
@@ -96,7 +99,7 @@ namespace VillaApi.Migrations
                         {
                             Id = 3,
                             Amenity = "",
-                            CreatedDate = new DateTime(2023, 4, 28, 12, 2, 45, 103, DateTimeKind.Local).AddTicks(6233),
+                            CreatedDate = new DateTime(2023, 4, 27, 10, 10, 2, 592, DateTimeKind.Local).AddTicks(6780),
                             Details = " It has 2 Pool and 7 Rooms",
                             ImageUrl = "",
                             Name = "Raja Villa",
@@ -105,42 +108,6 @@ namespace VillaApi.Migrations
                             Sqft = 5000,
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
-                });
-
-            modelBuilder.Entity("VillaApi.Models.VillaNumber", b =>
-                {
-                    b.Property<int>("VillaNo")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("SpecialDetails")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("VillaID")
-                        .HasColumnType("int");
-
-                    b.HasKey("VillaNo");
-
-                    b.HasIndex("VillaID");
-
-                    b.ToTable("VillaNumbers");
-                });
-
-            modelBuilder.Entity("VillaApi.Models.VillaNumber", b =>
-                {
-                    b.HasOne("VillaApi.Models.Villa", "Villa")
-                        .WithMany()
-                        .HasForeignKey("VillaID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Villa");
                 });
 #pragma warning restore 612, 618
         }
